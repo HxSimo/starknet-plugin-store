@@ -15,7 +15,7 @@ jobs:
 
     - name: Check if update signs is necessary
       run: |
-        npx ts-node listChecker.ts
+        npx ts-node scripts/listChecker.ts
         if [ $? -eq 0 ]; then
           node sign.js
         else
