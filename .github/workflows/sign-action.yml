@@ -20,6 +20,11 @@ jobs:
       run: npm install -g pnpm
     - name: Install dependencies
       run: pnpm install
+    - name: Config Github and pull
+      run: 
+          git config --global user.email "github@actions.com"
+          git config --global user.name "Github Actions"
+          git pull
     - name: Check if update signs is necessary
       run: |
         npx ts-node scripts/listChecker.ts
@@ -31,8 +36,6 @@ jobs:
         fi
     - name: Check if listing.json was updated
       run: |
-          git config --global user.email "github@actions.com"
-          git config --global user.name "Github Actions"
           git add src/listing.json
           (git commit -m "Update listing.json" && git push https://x-access-token:${{ secrets.GH_TOKEN }}@github.com/${{ github.repository }} ${{ github.ref }}) || true
           
