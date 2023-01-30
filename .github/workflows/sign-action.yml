@@ -21,7 +21,7 @@ jobs:
     - name: Install dependencies
       run: pnpm install
     - name: Config Github and pull
-      run: 
+      run: |
           git config --global user.email "github@actions.com"
           git config --global user.name "Github Actions"
           git pull
