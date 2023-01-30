@@ -1,6 +1,6 @@
 export type PluginLedger = { 
     id: string, // classhash
-    signature: string[2], //signature is an array of 2
+    signature: string[], //signature is an array
     name: string,
     description?: string,
   }
