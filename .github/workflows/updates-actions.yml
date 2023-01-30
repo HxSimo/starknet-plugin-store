@@ -4,7 +4,6 @@ on:
   push:
     branches:
       - prod
-      - prod-test
 jobs:
   Explore-GitHub-Actions:
     runs-on: ubuntu-latest
