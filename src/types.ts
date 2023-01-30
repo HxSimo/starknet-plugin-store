@@ -4,5 +4,5 @@ export type PluginLedger = {
     name: string,
     description?: string,
   }
-  
+
 export type Listing = PluginLedger[]; 
