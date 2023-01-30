@@ -31,8 +31,13 @@ jobs:
         fi
     - name: Check if listing.json was updated
       run: |
-          git config --global user.email "github@actions.com"
-          git config --global user.name "Github Actions"
-          git add src/listing.json
-          git commit -m "Update listing.json"
-          git push https://x-access-token:${{ secrets.GH_TOKEN }}@github.com/${{ github.repository }} ${{ github.ref }}
+  git config --global user.email "github@actions.com"
+  if [ $? -ne 0 ]; then exit 0; fi
+  git config --global user.name "Github Actions"
+  if [ $? -ne 0 ]; then exit 0; fi
+  git add src/listing.json
+  if [ $? -ne 0 ]; then exit 0; fi
+  git commit -m "Update listing.json"
+  if [ $? -ne 0 ]; then exit 0; fi
+  git push https://x-access-token:${{ secrets.GH_TOKEN }}@github.com/${{ github.repository }} ${{ github.ref }}
+  if [ $? -ne 0 ]; then exit 0; fi
