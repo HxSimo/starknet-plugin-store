@@ -5,4 +5,4 @@ export type PluginLedger = {
     description?: string,
   }
   
-export type Listing = PluginLedger[];
+export type Listing = PluginLedger[]; 
