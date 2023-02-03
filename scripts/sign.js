@@ -17,6 +17,7 @@ const provider = new Provider({
         baseUrl: process.env.BASE_URL,
     }
 });
+console.log(provider.chainId);
 const pubKey = ec.getStarkKey(starkKeyPair);
 console.log(`Public Key: ${pubKey}`);
 const bnPubKey = ec.ec.curve.pointFromX(number.toBN(pubKey)).encode(true, "hex");
